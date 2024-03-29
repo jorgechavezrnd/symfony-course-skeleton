@@ -22,4 +22,19 @@ class ParamController
             'email' => $email,
         ]);
     }
+
+    #[Route('/attributes/{name}/{email}', name: 'get-from-attributes', methods: ['GET'])]
+    public function getFromAttributes(string $name, string $email): Response
+    {
+        // Normal approach
+        // $name = $request->attributes->get('name');
+        // $email = $request->attributes->get('email');
+
+        // Recommended approach
+
+        return new JsonResponse([
+            'name' => $name,
+            'email' => $email,
+        ]);
+    }
 }
