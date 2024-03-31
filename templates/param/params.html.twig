@@ -9,7 +9,11 @@
         </div>
         <div class="row">
             <div class="col">
-                {{ email }}
+                {% if null != email %}
+                    {{ email }}
+                {% else %}
+                    "No existe el email"
+                {% endif %}
             </div>
         </div>
     </div>
